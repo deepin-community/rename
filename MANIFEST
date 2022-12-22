@@ -1,0 +1,31 @@
+Changes
+CONTRIBUTING
+Build.PL
+Makefile.PL
+MANIFEST
+README
+t/File-Rename.t
+t/File-Rename-E.t
+t/File-Rename-files.t
+t/File-Rename-filename-only.t
+t/File-Rename-import.t
+t/File-Rename-no-order.t
+t/File-Rename-Options.t
+t/File-Rename-script.t
+t/File-Rename-list.t
+t/File-Rename-list-null.t
+t/File-Rename-require.t
+t/File-Rename-unicode.t
+t/File-Rename-V.t
+t/rename-darwin.t
+t/rename-examples.t
+t/File-Rename-dash.t
+t/rename-ostype.t
+t/testlib.pl
+lib/File/Rename.pm
+lib/File/Rename/Options.pm
+lib/File/Rename/Unicode.pm
+rename.PL
+examples/rename.pl
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

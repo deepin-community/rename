@@ -1,0 +1,25 @@
+Source: rename
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Dominic Hargreaves <dom@earth.li>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: standard
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl
+Build-Depends-Indep: libpod-parser-perl <!nocheck>,
+                     perl
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/rename
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/rename.git
+Homepage: https://metacpan.org/release/File-Rename
+Rules-Requires-Root: no
+
+Package: rename
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: Perl extension for renaming multiple files
+ This package provides both a perl interface for renaming files
+ (File::Rename) and a command line tool 'rename' which is intended to
+ replace the version that used to be supplied by the perl package.

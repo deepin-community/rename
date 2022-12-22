@@ -1,0 +1,137 @@
+rename (1.30-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Update standards version to 4.5.1, no changes needed.
+
+  [ gregor herrmann ]
+  * Import upstream version 1.30.
+  * Update years of upstream copyright.
+  * Update test and runtime dependencies.
+    Remove libio-stringy-perl from Build-Depends-Indep and Recommends, and
+    libpod-parser-perl from Recommends.
+  * Drop ancient Breaks/Conflicts/Provides/Replaces.
+  * Drop unneeded version constraint from 'perl' in Depends.
+  * Declare compliance with Debian Policy 4.6.0.
+  * Enable autopkgtest smoke test:
+    - Add autopkgtest.patch to enable smoke tests with installed script.
+    - Drop debian/tests/pkg-perl/SKIP to run autopkgtest's smoke test.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 31 Oct 2021 17:47:07 +0100
+
+rename (1.13-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Dominic Hargreaves ]
+  * Reflect fact that rename is no longer provided by perl (Closes: #929069)
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 10 to 12.
+  * Set debhelper-compat version in Build-Depends.
+
+  [ gregor herrmann ]
+  * debian/watch: use uscan version 4.
+  * Import upstream version 1.13.
+  * Update Build-Depends-Indep and Recommends.
+  * Update years of upstream copyright.
+  * Declare compliance with Debian Policy 4.5.0.
+  * Set Rules-Requires-Root: no.
+  * Bump debhelper-compat to 13.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 20 Jun 2020 03:18:16 +0200
+
+rename (1.10-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Install new CONTRIBUTING document.
+  * Declare compliance with Debian Policy 4.2.1.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 30 Sep 2018 16:59:38 +0200
+
+rename (1.00-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Declare compliance with Debian Policy 4.1.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 27 Jul 2018 20:01:12 +0200
+
+rename (0.35-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Drop no_require_order.patch, applied upstream.
+  * Update years of upstream copyright.
+  * Update build dependencies.
+  * Mark package as autopkgtest-able.
+  * Declare compliance with Debian Policy 4.1.4.
+  * Bump debhelper compatibility level to 10.
+  * Use 'set -e' in maintainer scripts. Thanks to lintian.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 18 Jun 2018 22:06:05 +0200
+
+rename (0.20-7) unstable; urgency=medium
+
+  * Allow options to follow other arguments (Closes: #885103)
+
+ -- Dominic Hargreaves <dom@earth.li>  Mon, 19 Feb 2018 23:29:02 +0000
+
+rename (0.20-6) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Dominic Hargreaves <dom@earth.li>  Tue, 05 Sep 2017 22:49:36 +0100
+
+rename (0.20-5) experimental; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+
+  [ Dominic Hargreaves ]
+  * Add Multi-Arch: foreign (Closes: #872315)
+  * Add prename symlink, with suitable Breaks/Replaces on perl
+    (Closes: #870472)
+
+ -- Dominic Hargreaves <dom@earth.li>  Tue, 29 Aug 2017 19:17:40 +0100
+
+rename (0.20-4) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ Dominic Hargreaves ]
+  * Add Build-Depends on libmodule-build-perl
+
+ -- Dominic Hargreaves <dom@earth.li>  Thu, 04 Jun 2015 23:52:20 +0100
+
+rename (0.20-3) unstable; urgency=medium
+
+  * Update Priority to standard, to match perl which provides an older
+    version of 'rename'
+
+ -- Dominic Hargreaves <dom@earth.li>  Mon, 05 May 2014 15:47:08 +0100
+
+rename (0.20-2) unstable; urgency=medium
+
+  * Rename package to 'rename' (Closes: #738135)
+
+ -- Dominic Hargreaves <dom@earth.li>  Sun, 23 Feb 2014 19:04:56 +0000
+
+libfile-rename-perl (0.20-1) unstable; urgency=low
+
+  * Initial Release (Closes: #735902)
+  * Install rename as file-rename and register it as an alternative
+    for rename (see #735134)
+
+ -- Dominic Hargreaves <dom@earth.li>  Sat, 18 Jan 2014 15:27:37 +0000

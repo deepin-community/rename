@@ -1,0 +1,51 @@
+Description: enable smoke tests under autopkgtest
+ Return installed script name, and update regexps to cope with
+ leading /usr/bin.
+Origin: vendor
+Forwarded: not-needed
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2021-10-31
+
+--- a/t/testlib.pl
++++ b/t/testlib.pl
+@@ -130,6 +130,7 @@
+ } 
+ 
+ sub script_name {
++    return '/usr/bin/file-rename' if $ENV{AUTOPKGTEST_TMP};
+     return +(is_windows() ? 'file-rename' : 'rename');
+ }
+ 
+--- a/t/File-Rename-script.t
++++ b/t/File-Rename-script.t
+@@ -15,7 +15,7 @@
+ my $require_ok =  eval { require($script) };
+ ok( $require_ok, 'require script - '. $script);
+ die $@ unless $require_ok;
+-like( $INC{$script}, qr{/ $script \z}msx, "required $script in \%INC");
++like( $INC{$script}, qr{/? $script \z}msx, "required $script in \%INC");
+ 
+ #########################
+ 
+--- a/t/rename-examples.t
++++ b/t/rename-examples.t
+@@ -47,7 +47,7 @@
+ # for help writing this test script.
+ 
+ plan tests => 2 + (@examples || 1);
+-like( $inc_script, qr{/ $script \z}msx,
++like( $inc_script, qr{/? $script \z}msx,
+ 	"required $script is $inc_script");
+ ok( scalar(@examples) > 1,
+ 	"enough examples in $inc_script" );
+--- a/t/File-Rename-V.t
++++ b/t/File-Rename-V.t
+@@ -31,7 +31,7 @@
+ END{ 
+     close STDOUT or diag $!;
+     like( $buffer, qr{
+-	\b $script 
++	\b? $script
+ 	\s+ using 
+ 	\s+ (\w+\:\:)+Rename 
+ 	\s+ version 

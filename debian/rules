@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+PACKAGE = $(shell dh_listpackages)
+TMP     = $(CURDIR)/debian/$(PACKAGE)
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	# rename is an alternative, and file-rename is upstream's choice of
+	# alternative name (see Build.PL)
+	mv -v $(TMP)/usr/bin/rename $(TMP)/usr/bin/file-rename
+	mv -v $(TMP)/usr/share/man/man1/rename.1p $(TMP)/usr/share/man/man1/file-rename.1p
